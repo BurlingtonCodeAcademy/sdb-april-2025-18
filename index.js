@@ -35,3 +35,37 @@ console.log(yourPizza.describe())
 
 let megaPizza = new Pizza("huge", "everything", "stuffed crust", "extra cheese", "BBQ sauce", 30);
 console.log(megaPizza.megaDescribe())
+
+
+// factory method for cars
+class Car {
+    constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    drive() {
+        console.log(`${this.make} ${this.model} is driving!`)
+    }
+
+    // factory method to create a car
+    static createCar(make, model, year) {
+        return new Car(make, model, year);
+    }
+}
+
+let myCar = new Car("Dodge", "Ram", 2015)
+
+myCar.drive();
+
+let yourCar = Car.createCar("Toyota", "Camry", 2020);
+let thereCar = Car.createCar("Honda", "Civic", 2018);
+let hisCar = Car.createCar("Ford", "Mustang", 2021);
+let herCar = Car.createCar("Chevrolet", "Malibu", 2019);
+let jimmyCar = Car.createCar("Nissan", "Altima", 2022);
+yourCar.drive();
+thereCar.drive();
+hisCar.drive();
+herCar.drive();
+jimmyCar.drive();
